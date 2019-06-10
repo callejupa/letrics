@@ -1,36 +1,46 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Router from '../Routes/Routes'
 
-class MainLayout extends React.Component{
-    render(){
+function MainLayout (props){
+    const children = props.children
         return( <React.Fragment>
-            <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item title" href="https://bulma.io">
-                    Letrics
-                </a>
+            <div className="container-fluid">
+        <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand container">
+                <Link to="/" className="navbar-item title is-centered">
+                    <i className="fab fa-napster"></i>> Letrics
+                </Link>
 
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <a href="#" role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </a>
             </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                    <a class="button is-link">
+            <div className="navbar-end">
+                <div className="navbar-item">
+                    <div className="buttons">
+                    <Link to="/Home" className="button is-white is-medium">
+                        <strong>Tracks</strong>
+                    </Link>
+                    <Link to="/signup" className="button is-link is-medium">
                         <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-primary is-normal">
-                        <strong>Log in</strong>
-                    </a>
+                    </Link>
+                    <Link to="/login" className="button is-dark is-medium">
+                        <strong>Log in <i className="fas fa-sign-in-alt"></i></strong>
+                    </Link>
+                    
                     </div>
                 </div>
             </div>
-        </nav> 
+        </nav>         
+        </div>
+        <Router/>
+        {children}
+
         </React.Fragment>
-        )
-    }
+        )    
 }
 
 export default MainLayout
