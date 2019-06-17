@@ -1,6 +1,8 @@
-LETRICS
+## LETRICS
 
 Is a Project developed in a React Bootcamp, this project is personal and continuos growing....
+
+Use React and Redux technology
 
 ## Available Scripts
 
