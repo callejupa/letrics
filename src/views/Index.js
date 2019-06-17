@@ -6,7 +6,7 @@ import React from 'react'
             <>
             <div className="container">
                 {/* hacer un index con imagen de fondo */}
-                <h1 className="title">Inicio</h1>
+                <h1 className="title">Letrics</h1>
             </div>                
             </>
         )

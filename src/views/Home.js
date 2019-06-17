@@ -1,6 +1,7 @@
 import React from 'react'
 import { getTracks } from '../api/tracks'
 import TrackCard from '../components/TrackCard'
+import Loader from '../components/Loader'
 import '../styles/home.css'
 
 class Home extends React.Component {
@@ -19,14 +20,31 @@ class Home extends React.Component {
 
     render(){
         const tracks = this.state.tracks
+        if(tracks === undefined ||
+            Object.keys(tracks).length === 0){
+            return (<>
+                <div className="container">
+                    <div className="centrar">
+                        <Loader/>                    
+                    </div>                
+                </div>            
+                </>
+                )
+        }
+        else{
         return <>
-            <div classname="contenedor">
-                <h1 className="title">Top Letrics</h1>
+            <div className="container ">
+                <div className="contenedor margin text_center">
+                    <div className="">
+                        <h1 className="title">Top 20 Letrics</h1>
+                    </div>
+                </div>
             </div>
             <div className="contenedor is-desktop">
-                {this.state.tracks.map(item =><TrackCard key={item.track.track_id} {...item.track}/>)}
+                {tracks.map(item =><TrackCard key={item.track.track_id} {...item.track}/>)}
             </div>        
         </>
+        }
     }
 }
 

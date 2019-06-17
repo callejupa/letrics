@@ -25,7 +25,7 @@ function MainLayout (props){
                         <strong>Tracks</strong>
                     </Link>
                     <Link to="/signup" className="button is-link is-medium">
-                        <strong>Sign up</strong>
+                        <strong>Register</strong>
                     </Link>
                     <Link to="/login" className="button is-dark is-medium">
                         <strong>Log in <i className="fas fa-sign-in-alt"></i></strong>

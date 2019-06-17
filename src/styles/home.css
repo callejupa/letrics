@@ -3,3 +3,14 @@
     max-width: 100%;
     flex-wrap: wrap;
 }
+
+.margin{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.text_center{
+    text-align: center;
+    align-items: center;
+}
